@@ -1,0 +1,938 @@
+2019-06-05 19:04:33 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Add persian date to OpenCart
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['text_amount'] = $this->language->get('text_amount');
+LINE: 560
+
+FILE: admin/controller/catalog/review.php
+CODE: 'filter_date_added' => $filter_date_added,
+LINE: 254
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 272
+
+FILE: admin/controller/catalog/download.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 177
+
+FILE: admin/controller/customer/customer.php
+CODE: 'filter_date_added'        => $filter_date_added,
+LINE: 450
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 484
+LINE: 1226
+LINE: 1290
+LINE: 1356
+CODE: 'date_added' => date('d/m/y', strtotime($result['date_added'])),
+LINE: 1421
+
+FILE: admin/controller/extension/dashboard/activity.php
+CODE: date($this->language->get('datetime_format'), strtotime($result['date_added']))
+LINE: 132
+
+FILE: admin/controller/extension/dashboard/chart.php
+CODE: $json['xaxis'][] = array(date('w', strtotime($date)), date('D', strtotime($date)));
+LINE: 174
+CODE: for ($i = 1; $i <= date('t'); $i++) {
+LINE: 190
+CODE: $json['xaxis'][] = array($i, date('M', mktime(0, 0, 0, $i)));
+LINE: 221
+
+FILE: admin/controller/extension/dashboard/customer.php
+CODE: date('Y-m-d', strtotime('-1 day'))
+LINE: 110
+CODE: date('Y-m-d', strtotime('-2 day'))
+LINE: 112
+
+FILE: admin/controller/extension/dashboard/order.php
+CODE: date('Y-m-d', strtotime('-1 day'))
+LINE: 110
+CODE: date('Y-m-d', strtotime('-2 day'))
+LINE: 112
+
+FILE: admin/controller/extension/dashboard/sale.php
+CODE: date('Y-m-d', strtotime('-1 day'))
+LINE: 109
+CODE: date('Y-m-d', strtotime('-2 day'))
+LINE: 111
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 135
+
+FILE: admin/controller/extension/event.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 143
+
+FILE: admin/controller/extension/modification.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 679
+
+FILE: admin/controller/localisation/currency.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 212
+
+FILE: admin/controller/localisation/tax_rate.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 181
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 180
+
+FILE: admin/controller/localisation/zone.php
+CODE: $order = 'ASC';
+LINE: 122
+
+FILE: admin/controller/marketing/affiliate.php
+CODE: 'filter_date_added' => $filter_date_added,
+LINE: 382
+
+FILE: admin/controller/marketing/marketing.php
+CODE: 'filter_date_added' => $filter_date_added,
+LINE: 235
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 414
+LINE: 1173
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 253
+
+FILE: admin/controller/marketing/coupon.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 601
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 179
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 180
+CODE: $data['text_amount'] = $this->language->get('text_amount');
+LINE: 283
+
+FILE: admin/controller/report/affiliate.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 56
+
+FILE: admin/controller/report/affiliate_activity.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 78
+
+FILE: admin/controller/report/customer_activity.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 78
+
+FILE: admin/controller/report/customer_credit.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/customer_reward.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/sale_coupon.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 56
+
+FILE: admin/controller/report/marketing.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/product_purchased.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/sale_order.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/sale_shipping.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/sale_tax.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/customer_order.php
+CODE: 'filter_date_start'			=> $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/sale_return.php
+CODE: 'filter_date_start'	      => $filter_date_start,
+LINE: 76
+CODE: date($this->language->get('datetime_format'), strtotime($result['date_added']))
+LINE: 106
+
+FILE: admin/controller/report/customer_online.php
+CODE: date($this->language->get('datetime_format'), strtotime($result['date_added']))
+LINE: 82
+CODE: $filter_date_start = date('Y-m-d', strtotime(date('Y') . '-' . date('m') . '-01'));
+LINE: 10
+CODE: $filter_date_end = date('Y-m-d');
+LINE: 16
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 92
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 93
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 92
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 93
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 92
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 93
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 94
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 95
+
+FILE: admin/controller/sale/recurring.php
+CODE: 'filter_date_added'         => $filter_date_added,
+LINE: 127
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
+LINE: 454
+
+FILE: admin/controller/sale/order.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 215
+LINE: 1549
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 151
+
+FILE: admin/controller/sale/return.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 365
+LINE: 969
+
+FILE: admin/controller/sale/voucher.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 188
+LINE: 573
+CODE: 'filter_date_added'    => $filter_date_added,
+LINE: 197
+CODE: date($this->language->get('date_format_short'), strtotime($order_info['date_added']))
+LINE: 912
+LINE: 1777
+LINE: 1984
+CODE: 'filter_date_added'       => $filter_date_added,
+LINE: 345
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 218
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 368
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['entry_currency_auto'] = $this->language->get('entry_currency_auto');
+LINE: 81
+CODE: $data['help_currency_auto'] = $this->language->get('help_currency_auto');
+LINE: 161
+CODE: if (isset($this->request->post['config_currency_auto'])) {
+LINE: 594
+
+FILE: admin/controller/setting/store.php
+CODE: $data['entry_currency'] = $this->language->get('entry_currency');
+LINE: 206
+CODE: $data['help_currency'] = $this->language->get('help_currency');
+LINE: 232
+CODE: if (isset($this->request->post['config_currency'])) {
+LINE: 595
+
+FILE: admin/controller/tool/upload.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 150
+
+FILE: admin/controller/user/api.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 178
+
+FILE: admin/controller/user/user.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 178
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['datetime_format']
+LINE: 10
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['entry_currency_auto']
+LINE: 61
+CODE: $_['help_currency_auto']
+LINE: 144
+
+FILE: admin/language/en-gb/setting/store.php
+CODE: $_['entry_currency']
+LINE: 49
+CODE: $_['help_currency']
+LINE: 78
+
+FILE: admin/language/fa-ir/setting/setting.php
+CODE: $_['entry_currency_auto']
+LINE: 61
+CODE: $_['help_currency_auto']
+LINE: 144
+CODE: $_['entry_currency']
+LINE: 53
+CODE: $_['help_currency']
+LINE: 86
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->escape($data['date_available'])
+LINE: 3
+LINE: 129
+CODE: $this->db->escape($product_discount['date_start'])
+LINE: 56
+LINE: 189
+CODE: date_end = '" . $this->db->escape($product_discount['date_end']) . "'
+LINE: 56
+LINE: 189
+CODE: date_start = '" . $this->db->escape($product_special['date_start']) . "'
+LINE: 62
+LINE: 197
+CODE: date_end = '" . $this->db->escape($product_special['date_end']) . "'
+LINE: 62
+LINE: 197
+
+FILE: admin/model/marketing/coupon.php
+CODE: date_start = '" . $this->db->escape($data['date_start']) . "', date_end = '" . $this->db->escape($data['date_end']) . "'
+LINE: 3
+LINE: 23
+
+FILE: admin/model/sale/return.php
+CODE: date_ordered = '" . $this->db->escape($data['date_ordered']) . "',
+LINE: 3
+LINE: 9
+
+FILE: admin/model/report/customer.php
+CODE: for ($i = 1; $i <= date('t'); $i++) {
+LINE: 77
+CODE: $customer_data[date('j', strtotime($result['date_added']))] = array(
+LINE: 92
+CODE: for ($i = 1; $i <= 12; $i++) {
+LINE: 140
+CODE: $customer_data[date('n', strtotime($result['date_added']))] = array(
+LINE: 153
+
+FILE: admin/model/report/sale.php
+CODE: for ($i = 1; $i <= date('t'); $i++) {
+LINE: 113
+CODE: $order_data[date('j', strtotime($result['date_added']))] = array(
+LINE: 128
+CODE: for ($i = 1; $i <= 12; $i++) {
+LINE: 182
+CODE: $order_data[date('n', strtotime($result['date_added']))] = array(
+LINE: 195
+CODE: order_status_id IN(" . implode(",", $implode) . ")
+LINE: 36
+LINE: 68
+LINE: 122
+LINE: 189
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <?php echo $date_available; ?>
+LINE: 245
+CODE: <?php echo $product_discount['date_start']; ?>
+LINE: 731
+CODE: <?php echo $product_discount['date_end']; ?>
+LINE: 736
+CODE: <?php echo $product_special['date_start']; ?>
+LINE: 783
+CODE: <?php echo $product_special['date_end']; ?>
+LINE: 788
+
+FILE: admin/view/template/marketing/coupon_form.tpl
+CODE: <?php echo $date_start; ?>
+LINE: 158
+CODE: <?php echo $date_end; ?>
+LINE: 168
+
+FILE: admin/view/template/setting/setting.tpl
+CODE: <label class="col-sm-2 control-label" for="input-length-class"><?php echo $entry_length_class; ?></label>
+LINE: 298
+
+FILE: admin/view/template/setting/store_form.tpl
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 274
+
+FILE: catalog/controller/account/download.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 81
+
+FILE: catalog/controller/account/order.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 72
+LINE: 361
+
+FILE: catalog/controller/account/recurring.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 74
+LINE: 193
+
+FILE: catalog/controller/account/return.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 71
+LINE: 199
+
+FILE: catalog/controller/account/reward.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 67
+
+FILE: catalog/controller/account/transaction.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 66
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
+LINE: 202
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($recurring_info['date_added']));
+LINE: 170
+CODE: $data['date_ordered'] = date($this->language->get('date_format_short'), strtotime($return_info['date_ordered']));
+LINE: 179
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($return_info['date_added']));
+LINE: 180
+
+FILE: catalog/controller/affiliate/transaction.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 66
+
+FILE: catalog/controller/common/footer.php
+CODE: date('Y', time())
+LINE: 47
+
+FILE: catalog/controller/product/product.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 581
+
+FILE: catalog/model/account/return.php
+CODE: $this->db->escape($data['date_ordered'])
+LINE: 3
+
+FILE: catalog/model/checkout/order.php
+CODE: date($language->get('date_format_short'), strtotime($order_info['date_added']))
+LINE: 429
+LINE: 577
+LINE: 691
+LINE: 768
+
+FILE: catalog/language/en-gb/en-gb.php
+CODE: $_['datetime_format']
+LINE: 10
+----------------------------------------------------------------
+MOD: add rtl path to OpenCart
+
+FILE: catalog/controller/extension/total/voucher.php
+CODE: $mail->setHtml($this->load->view('mail/voucher', $data));
+LINE: 105
+CODE: $mail->setHtml($this->load->view('mail/order', $data));
+LINE: 655
+LINE: 743
+
+FILE: admin/model/sale/voucher.php
+CODE: $mail->setHtml($this->load->view('mail/voucher', $data));
+LINE: 131
+LINE: 175
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+2019-06-05 19:05:57 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Add persian date to OpenCart
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['text_amount'] = $this->language->get('text_amount');
+LINE: 560
+
+FILE: admin/controller/catalog/review.php
+CODE: 'filter_date_added' => $filter_date_added,
+LINE: 254
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 272
+
+FILE: admin/controller/catalog/download.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 177
+
+FILE: admin/controller/customer/customer.php
+CODE: 'filter_date_added'        => $filter_date_added,
+LINE: 450
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 484
+LINE: 1226
+LINE: 1290
+LINE: 1356
+CODE: 'date_added' => date('d/m/y', strtotime($result['date_added'])),
+LINE: 1421
+
+FILE: admin/controller/extension/dashboard/activity.php
+CODE: date($this->language->get('datetime_format'), strtotime($result['date_added']))
+LINE: 132
+
+FILE: admin/controller/extension/dashboard/chart.php
+CODE: $json['xaxis'][] = array(date('w', strtotime($date)), date('D', strtotime($date)));
+LINE: 174
+CODE: for ($i = 1; $i <= date('t'); $i++) {
+LINE: 190
+CODE: $json['xaxis'][] = array($i, date('M', mktime(0, 0, 0, $i)));
+LINE: 221
+
+FILE: admin/controller/extension/dashboard/customer.php
+CODE: date('Y-m-d', strtotime('-1 day'))
+LINE: 110
+CODE: date('Y-m-d', strtotime('-2 day'))
+LINE: 112
+
+FILE: admin/controller/extension/dashboard/order.php
+CODE: date('Y-m-d', strtotime('-1 day'))
+LINE: 110
+CODE: date('Y-m-d', strtotime('-2 day'))
+LINE: 112
+
+FILE: admin/controller/extension/dashboard/sale.php
+CODE: date('Y-m-d', strtotime('-1 day'))
+LINE: 109
+CODE: date('Y-m-d', strtotime('-2 day'))
+LINE: 111
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 135
+
+FILE: admin/controller/extension/event.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 143
+
+FILE: admin/controller/extension/modification.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 679
+
+FILE: admin/controller/localisation/currency.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 212
+
+FILE: admin/controller/localisation/tax_rate.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 181
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 180
+
+FILE: admin/controller/localisation/zone.php
+CODE: $order = 'ASC';
+LINE: 122
+
+FILE: admin/controller/marketing/affiliate.php
+CODE: 'filter_date_added' => $filter_date_added,
+LINE: 382
+
+FILE: admin/controller/marketing/marketing.php
+CODE: 'filter_date_added' => $filter_date_added,
+LINE: 235
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 414
+LINE: 1173
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 253
+
+FILE: admin/controller/marketing/coupon.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 601
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 179
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 180
+CODE: $data['text_amount'] = $this->language->get('text_amount');
+LINE: 283
+
+FILE: admin/controller/report/affiliate.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 56
+
+FILE: admin/controller/report/affiliate_activity.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 78
+
+FILE: admin/controller/report/customer_activity.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 78
+
+FILE: admin/controller/report/customer_credit.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/customer_reward.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/sale_coupon.php
+CODE: 'filter_date_start'	=> $filter_date_start,
+LINE: 56
+
+FILE: admin/controller/report/marketing.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/product_purchased.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 66
+
+FILE: admin/controller/report/sale_order.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/sale_shipping.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/sale_tax.php
+CODE: 'filter_date_start'	     => $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/customer_order.php
+CODE: 'filter_date_start'			=> $filter_date_start,
+LINE: 76
+
+FILE: admin/controller/report/sale_return.php
+CODE: 'filter_date_start'	      => $filter_date_start,
+LINE: 76
+CODE: date($this->language->get('datetime_format'), strtotime($result['date_added']))
+LINE: 106
+
+FILE: admin/controller/report/customer_online.php
+CODE: date($this->language->get('datetime_format'), strtotime($result['date_added']))
+LINE: 82
+CODE: $filter_date_start = date('Y-m-d', strtotime(date('Y') . '-' . date('m') . '-01'));
+LINE: 10
+CODE: $filter_date_end = date('Y-m-d');
+LINE: 16
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 92
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 93
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 92
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 93
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 92
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 93
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_start'])),
+LINE: 94
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_end'])),
+LINE: 95
+
+FILE: admin/controller/sale/recurring.php
+CODE: 'filter_date_added'         => $filter_date_added,
+LINE: 127
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
+LINE: 454
+
+FILE: admin/controller/sale/order.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 215
+LINE: 1549
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 151
+
+FILE: admin/controller/sale/return.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 365
+LINE: 969
+
+FILE: admin/controller/sale/voucher.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 188
+LINE: 573
+CODE: 'filter_date_added'    => $filter_date_added,
+LINE: 197
+CODE: date($this->language->get('date_format_short'), strtotime($order_info['date_added']))
+LINE: 912
+LINE: 1777
+LINE: 1984
+CODE: 'filter_date_added'       => $filter_date_added,
+LINE: 345
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 218
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+LINE: 368
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['entry_currency_auto'] = $this->language->get('entry_currency_auto');
+LINE: 81
+CODE: $data['help_currency_auto'] = $this->language->get('help_currency_auto');
+LINE: 161
+CODE: if (isset($this->request->post['config_currency_auto'])) {
+LINE: 594
+
+FILE: admin/controller/setting/store.php
+CODE: $data['entry_currency'] = $this->language->get('entry_currency');
+LINE: 206
+CODE: $data['help_currency'] = $this->language->get('help_currency');
+LINE: 232
+CODE: if (isset($this->request->post['config_currency'])) {
+LINE: 595
+
+FILE: admin/controller/tool/upload.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 150
+
+FILE: admin/controller/user/api.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 178
+
+FILE: admin/controller/user/user.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+LINE: 178
+
+FILE: admin/language/en-gb/en-gb.php
+CODE: $_['datetime_format']
+LINE: 10
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['entry_currency_auto']
+LINE: 61
+CODE: $_['help_currency_auto']
+LINE: 144
+
+FILE: admin/language/en-gb/setting/store.php
+CODE: $_['entry_currency']
+LINE: 49
+CODE: $_['help_currency']
+LINE: 78
+
+FILE: admin/language/fa-ir/setting/setting.php
+CODE: $_['entry_currency_auto']
+LINE: 61
+CODE: $_['help_currency_auto']
+LINE: 144
+CODE: $_['entry_currency']
+LINE: 53
+CODE: $_['help_currency']
+LINE: 86
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->escape($data['date_available'])
+LINE: 3
+LINE: 129
+CODE: $this->db->escape($product_discount['date_start'])
+LINE: 56
+LINE: 189
+CODE: date_end = '" . $this->db->escape($product_discount['date_end']) . "'
+LINE: 56
+LINE: 189
+CODE: date_start = '" . $this->db->escape($product_special['date_start']) . "'
+LINE: 62
+LINE: 197
+CODE: date_end = '" . $this->db->escape($product_special['date_end']) . "'
+LINE: 62
+LINE: 197
+
+FILE: admin/model/marketing/coupon.php
+CODE: date_start = '" . $this->db->escape($data['date_start']) . "', date_end = '" . $this->db->escape($data['date_end']) . "'
+LINE: 3
+LINE: 23
+
+FILE: admin/model/sale/return.php
+CODE: date_ordered = '" . $this->db->escape($data['date_ordered']) . "',
+LINE: 3
+LINE: 9
+
+FILE: admin/model/report/customer.php
+CODE: for ($i = 1; $i <= date('t'); $i++) {
+LINE: 77
+CODE: $customer_data[date('j', strtotime($result['date_added']))] = array(
+LINE: 92
+CODE: for ($i = 1; $i <= 12; $i++) {
+LINE: 140
+CODE: $customer_data[date('n', strtotime($result['date_added']))] = array(
+LINE: 153
+
+FILE: admin/model/report/sale.php
+CODE: for ($i = 1; $i <= date('t'); $i++) {
+LINE: 113
+CODE: $order_data[date('j', strtotime($result['date_added']))] = array(
+LINE: 128
+CODE: for ($i = 1; $i <= 12; $i++) {
+LINE: 182
+CODE: $order_data[date('n', strtotime($result['date_added']))] = array(
+LINE: 195
+CODE: order_status_id IN(" . implode(",", $implode) . ")
+LINE: 36
+LINE: 68
+LINE: 122
+LINE: 189
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <?php echo $date_available; ?>
+LINE: 245
+CODE: <?php echo $product_discount['date_start']; ?>
+LINE: 731
+CODE: <?php echo $product_discount['date_end']; ?>
+LINE: 736
+CODE: <?php echo $product_special['date_start']; ?>
+LINE: 783
+CODE: <?php echo $product_special['date_end']; ?>
+LINE: 788
+
+FILE: admin/view/template/marketing/coupon_form.tpl
+CODE: <?php echo $date_start; ?>
+LINE: 158
+CODE: <?php echo $date_end; ?>
+LINE: 168
+
+FILE: admin/view/template/setting/setting.tpl
+CODE: <label class="col-sm-2 control-label" for="input-length-class"><?php echo $entry_length_class; ?></label>
+LINE: 298
+
+FILE: admin/view/template/setting/store_form.tpl
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 274
+
+FILE: catalog/controller/account/download.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 81
+
+FILE: catalog/controller/account/order.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 72
+LINE: 361
+
+FILE: catalog/controller/account/recurring.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 74
+LINE: 193
+
+FILE: catalog/controller/account/return.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 71
+LINE: 199
+
+FILE: catalog/controller/account/reward.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 67
+
+FILE: catalog/controller/account/transaction.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 66
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
+LINE: 202
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($recurring_info['date_added']));
+LINE: 170
+CODE: $data['date_ordered'] = date($this->language->get('date_format_short'), strtotime($return_info['date_ordered']));
+LINE: 179
+CODE: $data['date_added'] = date($this->language->get('date_format_short'), strtotime($return_info['date_added']));
+LINE: 180
+
+FILE: catalog/controller/affiliate/transaction.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 66
+
+FILE: catalog/controller/common/footer.php
+CODE: date('Y', time())
+LINE: 47
+
+FILE: catalog/controller/product/product.php
+CODE: date($this->language->get('date_format_short'), strtotime($result['date_added']))
+LINE: 581
+
+FILE: catalog/model/account/return.php
+CODE: $this->db->escape($data['date_ordered'])
+LINE: 3
+
+FILE: catalog/model/checkout/order.php
+CODE: date($language->get('date_format_short'), strtotime($order_info['date_added']))
+LINE: 429
+LINE: 577
+LINE: 691
+LINE: 768
+
+FILE: catalog/language/en-gb/en-gb.php
+CODE: $_['datetime_format']
+LINE: 10
+----------------------------------------------------------------
+MOD: add rtl path to OpenCart
+
+FILE: catalog/controller/extension/total/voucher.php
+CODE: $mail->setHtml($this->load->view('mail/voucher', $data));
+LINE: 105
+CODE: $mail->setHtml($this->load->view('mail/order', $data));
+LINE: 655
+LINE: 743
+
+FILE: admin/model/sale/voucher.php
+CODE: $mail->setHtml($this->load->view('mail/voucher', $data));
+LINE: 131
+LINE: 175
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
